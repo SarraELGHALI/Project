@@ -12,3 +12,10 @@ numpy
 moviepy
 IPython
 
+
+## traffic sign classifer 
+cv2
+pickle
+numpy
+matplotlib
+IPython 
