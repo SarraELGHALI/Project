@@ -1,0 +1,14 @@
+#my test environnement: 
+# Ubnutnu 16.04
+# python3.5  
+
+# First make sure to have ro to update pip3:
+#     $ sudo pip3 install --upgrade pip3
+
+##### line extraction 
+matplotlib 
+cv2 
+numpy
+moviepy
+IPython
+
