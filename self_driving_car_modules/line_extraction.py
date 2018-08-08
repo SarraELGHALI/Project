@@ -66,3 +66,6 @@ def select_white_yellow(image):
     # combine the mask
     mask = cv2.bitwise_or(white_mask, yellow_mask)
     return cv2.bitwise_and(image, image, mask = mask)
+
+def convert_gray_scale(image):
+    return cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
