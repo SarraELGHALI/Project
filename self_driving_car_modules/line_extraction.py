@@ -69,3 +69,41 @@ def select_white_yellow(image):
 
 def convert_gray_scale(image):
     return cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
+
+
+#Canny Edge Detection
+#I use cv2.GaussianBlur to smooth out edges.
+def apply_smoothing(image, kernel_size=15):
+    """
+    kernel_size must be postivie and odd
+    """
+    return cv2.GaussianBlur(image, (kernel_size, kernel_size), 0)
+
+def detect_edges(image, low_threshold=50, high_threshold=150):
+        return cv2.Canny(image, low_threshold, high_threshold)
+
+ # cv2.fillPoly OpenCV API Reference 
+def filter_region(image, vertices):
+    """
+    Create the mask using the vertices and apply it to the input image
+    """
+    mask = np.zeros_like(image)
+    if len(mask.shape)==2:
+        cv2.fillPoly(mask, vertices, 255)
+    else:
+        cv2.fillPoly(mask, vertices, (255,)*mask.shape[2]) # in case, the input image has a channel dimension        
+    return cv2.bitwise_and(image, mask)
+
+    
+def select_region(image):
+    """
+    It keeps the region surrounded by the `vertices` (i.e. polygon).  Other area is set to 0 (black).
+    """
+    # first, define the polygon by vertices
+    rows, cols = image.shape[:2]
+    bottom_left  = [cols*0.1, rows*0.95]
+    top_left     = [cols*0.4, rows*0.6]
+    bottom_right = [cols*0.9, rows*0.95]
+    top_right    = [cols*0.6, rows*0.6] 
+    # the vertices are an array of polygons (i.e array of arrays) and the data type must be integer
+    vertices = np.array([[bottom_left, top_left, top_right, bottom_right]], dtype=np.int32)
