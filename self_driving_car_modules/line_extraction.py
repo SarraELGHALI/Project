@@ -107,3 +107,22 @@ def select_region(image):
     top_right    = [cols*0.6, rows*0.6] 
     # the vertices are an array of polygons (i.e array of arrays) and the data type must be integer
     vertices = np.array([[bottom_left, top_left, top_right, bottom_right]], dtype=np.int32)
+    return filter_region(image, vertices)
+
+# Hough Transform Line Detection
+def hough_lines(image):
+    """
+    `image` should be the output of a Canny transform.
+    
+    Returns hough lines (not the image with lines)
+    """
+    return cv2.HoughLinesP(image, rho=1, theta=np.pi/180, threshold=20, minLineLength=20, maxLineGap=300)
+
+def draw_lines(image, lines, color=[255, 0, 0], thickness=2, make_copy=True):
+    # the lines returned by cv2.HoughLinesP has the shape (-1, 1, 4)
+    if make_copy:
+        image = np.copy(image) # don't want to modify the original
+    for line in lines:
+        for x1,y1,x2,y2 in line:
+            cv2.line(image, (x1, y1), (x2, y2), color, thickness)
+    return image
