@@ -19,3 +19,18 @@ pickle
 numpy
 matplotlib
 IPython 
+
+# for car detetction 
+numpy 
+cv2
+glob
+matplotlib
+importlib
+skimage
+sklearn
+pickle
+imath
+scipy
+moviepy
+IPython
+import ffmpeg_extract_subclip
