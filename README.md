@@ -2,15 +2,15 @@
 In This project, I have implemented some simplified component of a self_driving car. 
 
 ## Dependencies
-This project requires Python 3.5 and Python libraries spicified in requirements.txt 
+This project requires Python 3.5 and Python libraries spicified in [requirements.txt](https://github.com/SarraELGHALI/Project/blob/master/requirements.txt)
 
-##1. White line extraction:
+## 1. White line extraction:
 I have used only six images to reduce time of tratement and tests 
 
 the different steps in this algorithm that will enable us to identify and classify lane lines look as follows:
-    * Convert original image to HSL
-    * Isolate yellow and white from HSL image
-    *Convert image to grayscale for easier manipulation
+    - Convert original image to HSL
+    - Isolate yellow and white from HSL image
+    - Convert image to grayscale for easier manipulation
     - Apply Gaussian Blur to smoothen edges
     - Apply Canny Edge Detection on smoothed gray image
     - Trace Region Of Interest and discard all other lines identified by our previous step that are outside this region
@@ -26,7 +26,7 @@ to start the test:
 ```
 
 
-##2. traffic sign 
+## 2. traffic sign 
 
     - Visualize the German Traffic Signs Dataset using the pickled file(s). This is open ended, suggestions include: plotting traffic sign images, plotting the count of each signs ..
     - Design and implement a deep learning model that learns to recognize traffic signs. Train and test your model on the German Traffic Sign Dataset.: 
@@ -42,10 +42,10 @@ to start the test:
     python3 trafffic_sign.py 
 ```
 
-##3. Car detection using machine learning and object detection algorithm 
+## 3. Car detection using machine learning and object detection algorithm 
 this algorithm of vehicle detector is developped  by employing a conventional computer vision technique called Histogram of Oriented Gradients (HOG), combined with a machine learning algorithm called Support Vector Machines (SVM).
 In order to test this algorithm, I have used different Datasets
--[GTI Vehicle Image Database](http://www.gti.ssr.upm.es/data/Vehicle_database.html) : download this datasets and exract it Project/project_datasets file 
+- [GTI Vehicle Image Database](http://www.gti.ssr.upm.es/data/Vehicle_database.html) : download this datasets and exract it Project/project_datasets file 
 - [the project video form kitti](http://www.cvlibs.net/datasets/kitti/) 
 
 The alogrithm is based: 
@@ -53,7 +53,7 @@ The alogrithm is based:
 - Feature Extraction
 - apply Histogram of Oriented Gradients and Color bins toinput image to create features
 - Exploration Of Features
-- explore the result of our HOG operations.[explained here](https://www.learnopencv.com/histogram-of-oriented-gradients/)
+- explore the result of our HOG operations: [explained here](https://www.learnopencv.com/histogram-of-oriented-gradients/)
 - Finding Suitable Color Space
 - Classification
 - Heatmap Thresholding¶
@@ -66,7 +66,7 @@ to start the test:
 
 
 
-### thankk you 
+### thank you 
 
 
 
